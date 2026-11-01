@@ -16,9 +16,20 @@ Chaque projet a son **environnement virtuel**, un dossier `.venv` qui contient s
 
 Le code se copie, l'environnement se **recrée** sur chaque machine.
 
+uv lui-même est un programme installé sur le Mac (`~/.local/bin/uv`), **hors du dépôt**, comme Git. Dans le dépôt, il y a trois choses qu'il lit ou fabrique :
+
+| Fichier | Image | Dans Git ? |
+|---|---|---|
+| `pyproject.toml` | la recette : de quoi le projet a besoin | oui |
+| `uv.lock` | la liste de courses précise : les versions exactes | oui |
+| `.venv/` | le placard : les bibliothèques réellement installées | non, uv le recrée |
+
 ## En pratique
 
 ```bash
+uv add fastapi      # ajoute une dépendance (pyproject.toml + uv.lock + .venv)
+uv add --dev pytest # une dépendance réservée aux développeurs
+uv run python       # ouvre l'interpréteur interactif de l'environnement
 uv run plateforme   # crée/met à jour .venv si besoin, puis lance la commande dedans
 uv sync             # seulement mettre .venv à jour
 rm -rf .venv        # le supprimer : uv le recrée au prochain lancement

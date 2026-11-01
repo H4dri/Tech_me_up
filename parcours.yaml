@@ -16,7 +16,7 @@ modules:
       - id: m0-test
         titre: Test de positionnement Python
         type: test
-        statut: en_cours
+        statut: fait
       - id: m0-terminal
         titre: Le terminal et VS Code
         type: lecon
@@ -24,7 +24,7 @@ modules:
       - id: m0-uv
         titre: Python et uv (environnements, dépendances)
         type: lecon
-        statut: en_cours
+        statut: fait
       - id: m0-git
         titre: Git et GitHub, premier push
         type: lecon

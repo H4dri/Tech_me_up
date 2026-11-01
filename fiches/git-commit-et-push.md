@@ -29,7 +29,15 @@ git log --oneline           # l'historique, une ligne par commit
 git clone <adresse>         # récupère un dépôt entier sur une autre machine
 ```
 
-Les trois états dans `git status` : `Untracked` (jamais suivi), `Changes not staged` (suivi et modifié), `Changes to be committed` (préparé).
+Les trois états d'un fichier :
+
+| État | Sens | Dans `git status` |
+|---|---|---|
+| **untracked** | jamais suivi : dans aucun commit, et pas de `git add` | `Untracked files` |
+| **modified** | suivi, changé depuis le dernier commit, pas encore préparé | `Changes not staged for commit` |
+| **staged** | préparé : entrera dans la prochaine photo | `Changes to be committed` |
+
+Après un commit, les fichiers *staged* reviennent à l'état « rien à signaler ». Les *untracked* le restent.
 
 ## Pourquoi c'est comme ça
 
@@ -39,7 +47,7 @@ Les trois états dans `git status` : `Untracked` (jamais suivi), `Changes not st
 
 ## Pièges
 
-- **Message de commit** : une ligne courte qui dit ce que **fait** le commit (« Ajoute… », « Corrige… »), pas l'état du projet.
+- **Message de commit** : une ligne courte qui dit ce que **fait** le commit (« Ajoute… », « Corrige… »), pas l'état du projet. Relire la liste des fichiers pour ne rien oublier, et éviter le participe passé (« rajouté… »).
 - `git rm --cached` retire de la préparation, mais `git rm` **sans** `--cached` efface aussi le fichier du disque.
 - Un commit n'est pas sur GitHub tant qu'on n'a pas fait `git push`.
 - Pour le premier push, créer le dépôt GitHub **vide** (sans README).

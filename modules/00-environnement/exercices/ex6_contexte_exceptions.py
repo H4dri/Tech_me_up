@@ -12,7 +12,13 @@ def parse_age(text):
     parse_age("abc")  ->  ValueError avec le message : âge invalide : 'abc'
     parse_age("-3")   ->  ValueError avec le message : âge négatif : -3
     """
-    raise NotImplementedError
+    try :
+        age = int(text)
+    except ValueError :
+        raise ValueError(f"âge invalide : '{text}'")
+    if age < 0 :
+        raise ValueError(f"âge négatif : {age}")
+    return age
 
 
 class Timer:
@@ -27,3 +33,11 @@ class Timer:
 
     Utile : time.perf_counter() renvoie un instant précis, en secondes.
     """
+    def __enter__(self):
+        import time
+        self.start = time.perf_counter()
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        import time
+        self.elapsed = time.perf_counter() - self.start

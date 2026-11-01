@@ -40,5 +40,6 @@ En ne calculant que le nécessaire, on garde en mémoire une seule valeur à la 
 
 ## Pièges
 
+- **Un seul `yield` change la nature de la fonction**, même s'il est tout en bas. L'appeler n'exécute plus rien : elle renvoie un générateur. Donc pas de `yield` dans une méthode `__next__` (qui doit faire `return`), ni dans une fonction qui doit renvoyer autre chose (une fonction, une liste…). Dans les deux cas, on récupère un générateur au lieu du résultat voulu.
 - `for`, `list()`, `sum()`… interceptent eux-mêmes le `StopIteration` de fin : on ne le voit qu'avec `next()` sur un générateur épuisé.
 - Vouloir parcourir deux fois le même générateur donne une seconde fois vide. Si on en a besoin plusieurs fois : `list(g)` une fois, puis on réutilise la liste.

@@ -2,15 +2,22 @@
 
 Tests : uv run pytest modules/00-environnement/exercices/test_ex2_fonctions.py
 """
-
-
-def average(*numbers):
-    """Renvoie la moyenne de tous les nombres passés en arguments.
+"""Renvoie la moyenne de tous les nombres passés en arguments.
 
     average(2, 4, 6)  ->  4.0
     average()         ->  lève une ValueError (et pas une ZeroDivisionError)
-    """
-    raise NotImplementedError
+"""
+
+
+def average(*numbers):
+    if len(numbers) == 0 :
+        raise ValueError
+    result = 0
+    for x in numbers :
+        result += x
+    result = result / len(numbers)
+    return result
+
 
 
 def describe(name, **details):
@@ -19,7 +26,10 @@ def describe(name, **details):
     describe("Rex", species="dog", age=3)  ->  "Rex (species=dog, age=3)"
     describe("Rex")                        ->  "Rex"
     """
-    raise NotImplementedError
+    if not details:
+        return name
+    carc = ", ".join(f"{cle}={valeur}" for cle, valeur in details.items())
+    return f"{name} ({carc})"
 
 
 def make_counter(start=0):
@@ -32,4 +42,8 @@ def make_counter(start=0):
     make_counter(10) : le premier appel renvoie 11.
     Deux compteurs créés séparément ne se mélangent pas.
     """
-    raise NotImplementedError
+    n = start
+    while True :
+        n += 1
+        yield n
+    

@@ -11,13 +11,29 @@ def chunks(items, size):
 
     Ce doit être un générateur (avec `yield`), pas une fonction qui renvoie une liste.
     """
-    raise NotImplementedError
+    if size <= 0 :
+        raise ValueError("Size must be a positive integer")
+    rank = 0
+    while rank < len(items) :
+        yield items[rank: rank + size]
+        rank += size
+    '''for loop in range(int(len(items)/size)) :
+        yield items[rank+loop:size]'''
 
 
-class Countdown:
-    """Itérateur qui compte à rebours, écrit à la main, SANS `yield`.
+class Countdown:              #list(Countdown(3))  ->  [3, 2, 1]
+    
+    def __init__(self,start) :
+        self.n = int(start)
+    
+    def __iter__(self) :
+        return self
+    
+    def __next__(self) :
+        if self.n < 1:
+            raise StopIteration
+        result = self.n
+        self.n = self.n - 1
+        return result
+        
 
-    list(Countdown(3))  ->  [3, 2, 1]
-
-    Il faut les deux méthodes spéciales du protocole d'itération.
-    """

@@ -23,9 +23,9 @@ notions:
     titre: "Une variable est une étiquette vers un objet (alias de liste)"
     module: m1
     fiche: variables-et-references
-    maitrise: fragile
+    maitrise: en_cours
     vue_le: 2026-10-22
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-05
 
   - id: muable-immuable
     titre: Objets muables et immuables
@@ -49,7 +49,7 @@ notions:
     fiche: generateurs-paresseux
     maitrise: fragile
     vue_le: 2026-10-22
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-02
 
   - id: comprehension-dict
     titre: "Compréhension de dictionnaire vs set ({k: v for ...})"
@@ -70,25 +70,25 @@ notions:
     titre: "uv et .venv : le code se copie, l'environnement se recrée"
     module: m0
     fiche: environnement-virtuel
-    maitrise: en_cours
+    maitrise: fragile
     vue_le: 2026-10-22
-    prochaine_revision: 2026-10-29
+    prochaine_revision: 2026-11-02
 
   - id: plus-egal-liste
     titre: "a = a + x (nouvel objet) contre a += x (modification sur place d'une liste)"
     module: m1
     fiche: variables-et-references
-    maitrise: fragile
+    maitrise: en_cours
     vue_le: 2026-10-25
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-05
 
   - id: git-commit
     titre: "Commit = photo : git add, zone de préparation, git commit, hash"
     module: m0
     fiche: git-commit-et-push
-    maitrise: fragile
+    maitrise: en_cours
     vue_le: 2026-10-25
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-05
 
   - id: git-etats-fichier
     titre: "Les trois états d'un fichier : untracked, modified, staged"
@@ -96,7 +96,7 @@ notions:
     fiche: git-commit-et-push
     maitrise: fragile
     vue_le: 2026-10-25
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-02
 
   - id: git-message-commit
     titre: "Un bon message de commit : une ligne, ce que fait le commit"
@@ -104,15 +104,15 @@ notions:
     fiche: git-commit-et-push
     maitrise: fragile
     vue_le: 2026-10-25
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-02
 
   - id: gitignore
     titre: "Le .gitignore : ce qui se recrée ou reste propre à une machine"
     module: m0
     fiche: git-commit-et-push
-    maitrise: fragile
+    maitrise: en_cours
     vue_le: 2026-10-25
-    prochaine_revision: 2026-10-26
+    prochaine_revision: 2026-11-05
 
   - id: git-remote-push-clone
     titre: "Dépôt distant : origin, git push, git clone (et la clé SSH)"
@@ -128,3 +128,76 @@ notions:
     maitrise: fragile
     vue_le: 2026-10-25
     prochaine_revision: 2026-10-26
+
+  - id: uv-pyproject-lock
+    titre: "uv hors du dépôt ; pyproject.toml (recette), uv.lock (versions), .venv (installé) ; uv add --dev"
+    module: m0
+    fiche: environnement-virtuel
+    maitrise: fragile
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-02
+
+  - id: pytest-bases
+    titre: "pytest : fichiers test_*.py, fonctions test_*, assert, pytest.raises"
+    module: m0
+    fiche: pytest
+    maitrise: fragile
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-02
+
+  - id: generateur-vs-fonction
+    titre: "Un yield dans le corps : l'appel renvoie un générateur sans rien exécuter"
+    module: m1
+    fiche: generateurs-paresseux
+    maitrise: fragile
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-02
+
+  - id: protocole-iteration
+    titre: "Itérateur écrit à la main : __iter__ (return self), __next__ (return), StopIteration"
+    module: m1
+    maitrise: fragile
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-02
+
+  - id: closure-nonlocal
+    titre: "Closure : une fonction qui renvoie une fonction, et nonlocal"
+    module: m1
+    maitrise: fragile
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-02
+
+  - id: style-pep8
+    titre: "Style pro : noms en anglais et snake_case, imports en haut, pas d'espace avant les :"
+    module: m1
+    maitrise: fragile
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-02
+
+  - id: poo-heritage
+    titre: "POO : classe, __init__, héritage, super(), __repr__"
+    module: m1
+    maitrise: acquis
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-15
+
+  - id: decorateurs
+    titre: "Écrire un décorateur (*args, **kwargs), y compris avec un argument"
+    module: m1
+    maitrise: acquis
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-15
+
+  - id: exceptions
+    titre: "Exceptions : try/except, raise ValueError avec un message"
+    module: m1
+    maitrise: acquis
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-15
+
+  - id: gestionnaire-contexte
+    titre: "Gestionnaire de contexte : __enter__ et __exit__ (with)"
+    module: m1
+    maitrise: acquis
+    vue_le: 2026-11-01
+    prochaine_revision: 2026-11-15

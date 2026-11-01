@@ -12,7 +12,7 @@ def squares_of_evens(numbers):
 
     Contrainte : le corps tient en une ligne, avec une compréhension de liste.
     """
-    raise NotImplementedError
+    return [x**2 for x in numbers if x % 2 == 0]
 
 
 def count_words(text):
@@ -22,4 +22,10 @@ def count_words(text):
 
     Les mots sont séparés par des espaces. Pas de ponctuation à gérer.
     """
-    raise NotImplementedError
+    text = text.lower()
+    texte_en_liste = text.split()
+    LeDict = {}
+    for mot in texte_en_liste :
+        LeDict[mot] = texte_en_liste.count(mot)
+    #rep = {mot : texte_en_liste.count(mot) for mot in texte_en_liste}
+    return LeDict

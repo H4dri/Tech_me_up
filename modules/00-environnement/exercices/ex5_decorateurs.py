@@ -18,7 +18,14 @@ def count_calls(func):
 
     La fonction décorée peut avoir n'importe quels arguments.
     """
-    raise NotImplementedError
+
+    def wrapper(*args, **kwargs):
+        wrapper.calls += 1
+        return func(*args, **kwargs)
+    wrapper.calls = 0
+    wrapper.__name__ = func.__name__
+    return wrapper
+
 
 
 def repeat(times):
@@ -30,4 +37,11 @@ def repeat(times):
 
     roll()  ->  appelle la fonction d'origine 3 fois, et renvoie la liste des 3 résultats.
     """
-    raise NotImplementedError
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            results = []
+            for _ in range(times):
+                results.append(func(*args, **kwargs))
+            return results
+        return wrapper
+    return decorator
